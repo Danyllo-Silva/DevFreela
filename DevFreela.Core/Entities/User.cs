@@ -8,6 +8,7 @@ namespace DevFreela.Core.Entities
 {
     public class User : BaseEntity
     {
+        
         public User(string name, string email, DateTime birthDate)
         {
             Name = name;
