@@ -7,5 +7,6 @@ namespace DevFreela.Models
 {
     public class CreateCommetModel
     {
+
     }
 }

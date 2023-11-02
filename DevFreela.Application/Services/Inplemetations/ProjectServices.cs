@@ -3,11 +3,8 @@ using DevFreela.Application.Services.Interfaces;
 using DevFreela.Application.ViewModels;
 using DevFreela.Core.Entities;
 using DevFreela.Infrestructure.Persistence;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DevFreela.Application.Services.Inplemetations
 {
@@ -54,7 +51,7 @@ namespace DevFreela.Application.Services.Inplemetations
             var projects = _dbContext.Projects;
 
             var projectsViewModel = projects
-                .Select(p => new ProjectViewModel(p.Title, p.CreatedAt))
+                .Select(p => new ProjectViewModel(p.Id, p.Title, p.CreatedAt))
                 .ToList();
 
             return projectsViewModel;
