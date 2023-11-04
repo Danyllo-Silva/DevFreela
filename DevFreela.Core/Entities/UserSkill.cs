@@ -8,14 +8,15 @@ namespace DevFreela.Core.Entities
 {
     public class UserSkill : BaseEntity
     {
-        public UserSkill(int id, int idSkill)
+        public UserSkill(int idUser, int idSkill)
         {
-            Id = id;
+            IdUser = idUser;
             IdSkill = idSkill;
         }
 
-        public int Id { get; private set; }
+        public int IdUser { get; private set; }
         public int IdSkill { get; private set; }
+        public Skill Skill { get; private set; }
 
     }
 }

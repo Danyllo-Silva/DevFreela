@@ -1,42 +1,31 @@
 ﻿using DevFreela.Core.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DevFreela.Infrestructure.Persistence
 {
-   public class DevFreelaDbContext
+   public class DevFreelaDbContext : DbContext
     {
-        public DevFreelaDbContext()
+        public DevFreelaDbContext(DbContextOptions<DevFreelaDbContext> options) : base(options)
         {
-            Projects = new List<Project>
-            {
-                new Project("Meu projeto ASPNET Core 1", "Minha Descrição de Projeto 1", 1, 1, 10000),
-                new Project("Meu projeto ASPNET Core 2", "Minha Descrição de Projeto 2", 1, 1, 20000),
-                new Project("Meu projeto ASPNET Core 3", "Minha Descrição de Projeto 3", 1, 1, 30000)
-            };
-
-            Users = new List<User>
-            {
-                new User("Danyllo Silva", "danylloe.silva@outlook.com", new DateTime (1990, 09, 02)),
-                new User("Luiz Silva", "luiz.silva@outlook.com", new DateTime (1991, 09, 02)),
-                new User("Katty Silva", "katty.silva@outlook.com", new DateTime (1993, 09, 02)),
-                new User("Jhany Silva", "jhany.silva@outlook.com", new DateTime (1992, 09, 02))
-            };
-
-            Skills = new List<Skill>
-            {
-                new Skill(".NET Core"),
-                new Skill("C#"),
-                new Skill("SQL")
-            };
-
+         
         }
-        public List<Project> Projects { get; set; }
-        public List<User> Users { get;  set; }
-        public List<Skill> Skills { get;  set; }
-        public List<ProjectComment> ProjectComments { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<User> Users { get;  set; }
+        public DbSet<Skill> Skills { get;  set; }
+        public DbSet<UserSkill> UserSkills { get; set; }
+        public DbSet<ProjectComment> ProjectComments { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly()); 
+        }
+
+           
     }
 }
