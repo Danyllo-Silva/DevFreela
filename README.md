@@ -1,4 +1,4 @@
-<div alingn="center">
+<div align="center">
   <h1>DevFreela</h1>
   <br/>
   =========================API=========================<br/>
