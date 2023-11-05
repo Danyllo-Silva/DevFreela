@@ -1,12 +1,8 @@
 ﻿using DevFreela.Application.InputModel;
 using DevFreela.Application.Services.Interfaces;
-using DevFreela.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
+//Iniciando Projeto
 
 namespace DevFreela.Controllers
 {
