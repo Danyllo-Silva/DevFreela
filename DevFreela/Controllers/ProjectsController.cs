@@ -1,4 +1,4 @@
-﻿using DevFreela.Application.InputModels;
+﻿using DevFreela.Application.InputModel;
 using DevFreela.Application.Services.Interfaces;
 using DevFreela.Models;
 using Microsoft.AspNetCore.Mvc;
