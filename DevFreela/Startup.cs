@@ -39,7 +39,7 @@ namespace DevFreela
 
             services.AddScoped<IProjectService, ProjectServices>();
             services.AddScoped<IUserService, UserService>();
-            services.AddScoped<ISkillService, SkillService>();
+            
 
             
 
